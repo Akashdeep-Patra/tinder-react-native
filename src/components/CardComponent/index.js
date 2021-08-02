@@ -5,19 +5,17 @@ import {ImageBackground, StyleSheet, Text, View} from 'react-native';
 
 const CardComponent = ({name, image, bio}) => {
   return (
-    <View style={styles.pageContainer}>
-      <View style={styles.imageContainerClass}>
-        <ImageBackground
-          style={styles.imageClass}
-          source={{
-            uri: image,
-          }}>
-          <View style={styles.textContainer}>
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.bio}>{bio}</Text>
-          </View>
-        </ImageBackground>
-      </View>
+    <View style={styles.card}>
+      <ImageBackground
+        style={styles.imageClass}
+        source={{
+          uri: image,
+        }}>
+        <View style={styles.textContainer}>
+          <Text style={styles.name}>{name}</Text>
+          <Text style={styles.bio}>{bio}</Text>
+        </View>
+      </ImageBackground>
     </View>
   );
 };
@@ -26,11 +24,6 @@ export default CardComponent;
 const styles = StyleSheet.create({
   textContainer: {
     padding: 10,
-  },
-  pageContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1,
   },
   name: {fontSize: 30, color: 'white', fontWeight: 'bold'},
   bio: {fontSize: 18, color: 'white', lineHeight: 25},
@@ -41,17 +34,18 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     justifyContent: 'flex-end',
   },
-  imageContainerClass: {
+  card: {
+    backgroundColor: 'transparent',
     width: '95%',
     height: '75%',
     shadowColor: '#000',
     shadowOffset: {
       width: 2,
-      height: 5,
+      height: 10,
     },
-    shadowOpacity: 2,
-    shadowRadius: 6.65,
+    shadowOpacity: 0.61,
+    shadowRadius: 13.16,
 
-    elevation: 7,
+    elevation: 15,
   },
 });
